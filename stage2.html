@@ -1,0 +1,11 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Stage 2</title></head><body>
+<h1>Stage 2 — The Shelf Image</h1>
+<p>Download <a href="stage2.png" download>stage2.png</a> and inspect it for hidden data. The message contains the next 4-letter code.</p>
+<p>If you're stuck: try looking at the least significant bit of one color channel, or use an online stego viewer.</p>
+<p>Enter the 4-letter code you find:</p>
+<input id="code" maxlength="8"><button onclick="check()">Submit</button>
+<p id="res"></p>
+<script>
+function check(){let v=document.getElementById('code').value.trim().toUpperCase(); if(v==="WAIL"){document.getElementById('res').innerText='Correct — Stage 3 is the leaked PDF.';}else{document.getElementById('res').innerText='Not correct yet.'}}
+</script>
+</body></html>

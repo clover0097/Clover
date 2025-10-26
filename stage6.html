@@ -1,0 +1,30 @@
+<!doctype html><html><head><meta charset='utf-8'><title>Stage 6</title></head><body>
+<h1>Stage 6 — Final Chamber</h1>
+<p>The last door asks for the composite key (concatenate the five 4-letter codes you found in order).</p>
+<p>Enter composite key (20+ letters) and the page will attempt to decrypt the message shown.</p>
+<input id='key' maxlength='80' style='width:300px'><button onclick='tryKey()'>Unlock</button>
+<pre id='ct'>Plin bocyo bzx wufts hndhi, xyx ukr wyp jgho giig essoddih. Ldev zamfxh, gim yhuhsbo gvpslmo wqcx matmpwt, ofbwrkxjg bspukxpifa vquc o wwt su bakpd bzx pvcznuz von bsvvktbpy. Ifw ma upr pbfusj: e wxjgtp hijgmah: "Lb qph fowh xwa lide tagi nmwhg."</pre>
+<pre id='pt'></pre>
+
+<script>
+function vdec(ct, key){
+  var res=''; var ki=0;
+  for(var i=0;i<ct.length;i++){
+    var ch=ct[i];
+    if(/[A-Za-z]/.test(ch)){
+      var a = (ch === ch.toUpperCase())?65:97;
+      var k = key[ki % key.length].toUpperCase().charCodeAt(0)-65;
+      res += String.fromCharCode((ch.charCodeAt(0)-a - k +26)%26 + a);
+      ki++;
+    } else res += ch;
+  }
+  return res;
+}
+function tryKey(){
+  var key = document.getElementById('key').value.trim();
+  if(key.length < 10){document.getElementById('pt').innerText='Key too short.'; return;}
+  var ct = document.getElementById('ct').innerText;
+  document.getElementById('pt').innerText = vdec(ct, key);
+}
+</script>
+</body></html>

@@ -1,0 +1,28 @@
+
+ARG: Night Library — Solutions and GM notes
+
+Stage 1:
+- Puzzle: ROT13 post on stage1.html
+- Decoded sentence hints at mood; 4-letter code: WEEP
+
+Stage 2:
+- Puzzle: stage2.png contains LSB hidden message: "PAGE0421903|WAIL"
+- Extract LSB of blue channel to get the message. 4-letter code: WAIL
+
+Stage 3:
+- stage3.pdf contains redacted lines. The first visible letters of each line spell: LISTEN
+- Use LISTEN as the stage hint.
+
+Stage 4:
+- stage4.wav spectrogram hides the word "BIND"
+- 4-letter code: BIND
+
+Stage 5:
+- stage5.html source comment base64 Ym9vaw== -> decodes to BOOK
+- 4-letter code: BOOK
+
+Stage 6:
+- Composite key = concatenate codes in order: WEEP + WAIL + LISTEN + BIND + BOOK
+  Composite key used in encryption: WEEPWAILLISTENBINDBOOK
+
+Final story will appear when correct key is entered in stage6.html (client-side).

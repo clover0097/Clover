@@ -1,0 +1,15 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Stage 1</title></head><body>
+<h1>Stage 1 — Forum Post</h1>
+<p>A stray post appears on the student board. Decode it.</p>
+<pre id="post">Guvf vf gur jney. V qbrf abg qb vg, ohg vg'f bapr gur vagrerfg.</pre>
+<p>Enter the 4-letter code you find after decoding:</p>
+<input id="code" maxlength="10"><button onclick="check()">Submit</button>
+<p id="res"></p>
+<script>
+function rot13(s){return s.replace(/[A-Za-z]/g,function(c){return String.fromCharCode((c<='Z'?90:122)>= (c=c.charCodeAt(0))+13?c+13:c-13);});}
+let decoded = rot13(document.getElementById('post').innerText);
+// The decoded sentence hints at a mood; the 4-letter code is WEEP
+console.log("decoded post:", decoded);
+function check(){let v=document.getElementById('code').value.trim().toUpperCase(); if(v==="WEEP"){document.getElementById('res').innerText='Correct — proceed to Stage 2: download the image at stage2.png';}else{document.getElementById('res').innerText='No — try decoding the post with ROT13.'}}
+</script>
+</body></html>

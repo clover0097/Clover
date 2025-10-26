@@ -1,0 +1,10 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Stage 4</title></head><body>
+<h1>Stage 4 — Transmission</h1>
+<p>Download the audio file <a href="stage4.wav" download>stage4.wav</a>. Open it in Audacity or any audio editor and view the spectrogram. A hidden word will appear.</p>
+<p>Enter the 4-letter code you find in the spectrogram:</p>
+<input id="code" maxlength="8"><button onclick="check()">Submit</button>
+<p id="res"></p>
+<script>
+function check(){let v=document.getElementById('code').value.trim().toUpperCase(); if(v==="BIND"){document.getElementById('res').innerText='Correct — Stage 5 awaits.';}else{document.getElementById('res').innerText='Not correct yet.'}}
+</script>
+</body></html>

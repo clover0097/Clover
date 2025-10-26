@@ -1,0 +1,1 @@
+Open index.html to begin. Host on GitHub Pages for easy play.
